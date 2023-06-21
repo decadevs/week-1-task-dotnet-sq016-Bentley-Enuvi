@@ -59,26 +59,26 @@ namespace Bentley_BankApp
 
         public void Display()
         {
-            Console.WriteLine("Account Type: " + AccountType);
-            Console.WriteLine("Account Name: " + AccountName);
-            Console.WriteLine("Account Number: " + AccountNumber);
+            Console.WriteLine("Account Type: " + BankAccount.AccountType);
+            Console.WriteLine("Account Name: " + BankAccount.AccountName);
+            Console.WriteLine("Account Number: " + BankAccount.AccountNumber);
             Console.WriteLine("Account Balance: " + AccountBalance);
         }
 
         internal void PrintStatement()
         {
-            throw new NotImplementedException();
+
         }
     }
-    public class Program
+    public class Bentley_BankApp
     {
-        private static readonly IEnumerable<object> Account;
+        private static IEnumerable<object> Account;
 
         static void Main(string[] args)
         {
-            void PrintAccount(IEnumerable<object> BankAccountDetails)
+            void PrintAccount(IEnumerable<object> BankAccount)
             {
-                BankApp bank = new BankApp();
+                Transactions account1 = new Transactions(10000, 3000, 4000, 30000.00m);
             }
 
 
@@ -90,7 +90,7 @@ namespace Bentley_BankApp
                 Console.WriteLine(" 1. Already have an account? Log In");
                 Console.WriteLine(" 2. New User? Sign up");
                 initialResponse = int.Parse(Console.ReadLine());
-                Console.Clear();
+                
 
                 if (initialResponse > 0)
                 {
@@ -101,25 +101,19 @@ namespace Bentley_BankApp
                     Console.WriteLine();
                 }
 
-                void BankAccount(string accountName, string accountNumber, int AccountType, int AccountBalance, string Note)
+                void BankAccount(string accountName, string accountNumber, int accountType, int AccountBalance, string Note)
                 {
                     BankAccount account1 = new BankAccount("Cheng Yi Min", 0093732014, "Current", 100000.00m, "Orphanage");
                     BankAccount account2 = new BankAccount("Cheng Yi Min", 8109847414, "Savings", 50000.00m, "School Fees");
-                    //Type = AccountType;
-                    //AccountName = accountName;
-                    // AccountNumber = AccountNumber;
-                    //AccountBalance = AccountBalance;
+                    
                 }
 
                 BankApp b1 = new BankApp();
-                //b1.OpenAccount("Current", "Bentley Enuvi", 0093732014, 100000);
-                //b1.Display();
-                //b1.Withdraw(20000);
-                //b1.Deposit(500000);
-                //b1.CheckBalance();
                 int AccountNumber;
                 do
                 {
+                    Console.Clear();
+                    Console.WriteLine("Select a command below: ");
                     Console.WriteLine("1. Deposit");
                     Console.WriteLine("2. Withdraw");
                     Console.WriteLine("3. Transfer");
@@ -161,6 +155,7 @@ namespace Bentley_BankApp
 
                         case 5: 
                             Console.Clear();
+                            Console.WriteLine("Account Name: Cheng Yi Min");
                             b1.Display();
                             break;
 
@@ -178,6 +173,7 @@ namespace Bentley_BankApp
 
             // Print all accounts and balances
             void PrintStatement()
+                  
             {
                 Console.WriteLine("|---------------|------------------|--------------|-----------------|-----------------|");
                 Console.WriteLine("| FULL NAME     | ACCOUNT NUMBER   | ACCOUNT TYPE | ACCOUNT BALANCE |    NOTE         |");
@@ -186,12 +182,12 @@ namespace Bentley_BankApp
 
                 foreach (var account in Account)
                 {
-                   Console.WriteLine($"| {account.AccountName,-9} | {account.AccountNumber,-16} | {account.AccountType,-13} | {account.Balance,-11} | {account.Note,-6} |");
-                 }
+                    Console.WriteLine($"| {BankAccount.AccountName,-9} | {BankAccount.AccountNumber,-16} | {BankAccount.AccountType,-13} | {BankAccount.AccountBalance,-11} | {BankAccount.Note,-6} |");
+                }
 
-                Console.WriteLine("|---------------|------------------|--------------|-------------|--------|");
+                    Console.WriteLine("|---------------|------------------|--------------|-------------|--------|");
                 }
             }
         }
     }
-}
+

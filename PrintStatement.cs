@@ -19,7 +19,7 @@ namespace Bentley_BankApp
 
         public void Print()
         {
-            // Implement the logic to print the statement
+          
             Console.WriteLine("Printing statement...");
         }
         

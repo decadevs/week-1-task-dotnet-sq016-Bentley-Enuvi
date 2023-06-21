@@ -79,22 +79,4 @@ namespace Bentley_BankApp
 
 
 }
-  /*  public class Customer_Input
-    {
-        public int ID { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Password { get; set; }
-
-        public Customer_Input(string FullName, string Email, int PhoneNumber, string Password) 
-        {
-            this.ID = ++ID;
-            this.FullName = FullName = " ";
-            this.Email = Email = " ";
-            this.PhoneNumber = PhoneNumber;
-            this.Password = Password = " ";
-
-        }
-    }*/
-
+ 

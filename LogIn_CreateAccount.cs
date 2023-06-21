@@ -27,12 +27,6 @@ namespace Bentley_BankApp
                 
             }
 
-
-          /*    GetCustomerByEmailAndPassword customer = new GetCustomerByEmailAndPassword(email, password);
-              Console.ReadLine();
-              Console.Clear();
-              Transactions.TransactionMenu(customer);*/
-
         }
     }
 }

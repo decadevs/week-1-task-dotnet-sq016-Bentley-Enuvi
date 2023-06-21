@@ -1,10 +1,5 @@
-﻿//using Bentley_BankApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
-//using System.Linq;
-//using System.Security.Principal;
-//using System.Text;
-//using System.Threading.Tasks;
 
 namespace Bentley_BankApp
 {
@@ -22,8 +17,6 @@ namespace Bentley_BankApp
 
         public  BankAccount(string accountName, long accountNumber, string accountType, decimal accountBalance, string note)
         {
-            //FirstName = firstName;
-            //FirstName = lastName;
             AccountName = accountName;
             AccountNumber = accountNumber;
             AccountType = accountType;
@@ -33,9 +26,6 @@ namespace Bentley_BankApp
         }
 
         private List<BankAccount> accounts = new List<BankAccount>();
-        //private object existingBankAccount;
-
-        // Method to add a new account to the bank
         public void AddAccount(BankAccount account)
         {
             // Check if the account number already exists
@@ -57,9 +47,6 @@ namespace Bentley_BankApp
                     throw new Exception("User cannot have the same account type");
                 }
             }
-
-            // Add the account to the list of accounts
-            //accounts.Add(account);
         }
     }
 }
